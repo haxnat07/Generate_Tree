@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load random_color %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="entry-body my-4">
+    <h1 class="entry-title">Timeline of {{ user_added.name }}</h1>
+    <ul class="entry-ul">
+        {% for entry in entries %}
+        <li style="--accent-color:{% random_color %}">
+            <div class="entry-date">{{ entry.year }}</div>
+            <div class="entry-title">{{ entry.title }}</div>
+            {% if entry.photo %}
+            <div>
+                <img src="{{ entry.photo.url }}" alt="Photo for {{ entry.title }}" 
+                style="width:400px; height:150px">
+            </div>
+            {% endif %}
+            <div class="entry-descr mt-2">{{ entry.description }}</div>
+            
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

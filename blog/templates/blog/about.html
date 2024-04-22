@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<section class="about-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h1 class="section-title text-center mb-5">About Us</h1>
+        <p class="section-description text-center mb-5">In today's fast-paced world, the memories and stories of our loved ones can often be forgotten or fade away over time. However, The Life Story aims to preserve and share the life stories of deceased individuals, ensuring that their legacy lives on for generations to come.</p>
+        <p class="section-description text-center mb-5">The Life Story is a web application that allows people to keep the memory of their loved ones alive and offers a platform for capturing and sharing the personal narratives and accomplishments of those who have passed away.</p>
+        <p class="section-description text-center mb-5">This application was developed for our final year project as part of our Enterprise Computing degree in Dublin City University.</p>
+        <h2 class="section-subtitle text-center mb-4">Meet the Team:</h2>
+        <p class="section-description text-center mb-5">Feel free to contact us/connect with us if you have any questions or suggestions. We'd love to hear from you!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card text-center">
+          <img src="/media/ryan.jpg" class="card-img-top" alt="Ryan">
+          <div class="card-body">
+            <h2 class="card-title">Ryan Lannon</h2>
+            <p class="card-text">Funeral Director & Developer</p>
+            <p class="card-text">Dublin City University - Enterprise Computing student</p>
+            <p class="card-text">ryan.lannon3@mail.dcu.ie</p>
+            <a href="{% url 'contact-submit' %}" class="btn btn-dark btn-lg btn-block">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card text-center">
+          <img src="/media/enkhjin.jpeg" class="card-img-top" alt="Enkhjin">
+          <div class="card-body">
+            <h2 class="card-title">Enkhjin Orgil</h2>
+            <p class="card-text">Developer & Designer</p>
+            <p class="card-text">Dublin City University - Enterprise Computing student</p>
+            <p class="card-text">enkhjin.orgil2@mail.dcu.ie</p>
+            <a href="{% url 'contact-submit' %}" class="btn btn-dark btn-lg btn-block">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

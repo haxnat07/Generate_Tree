@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="content-section">
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"></legend>
+                <h4>You have been successfully logged out.</h4>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-street" type="submit"><a class="text-dark" href="{% url 'login' %}">Login Again</a></button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

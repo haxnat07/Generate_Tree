@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center mb-4">
+            <h2>These are the all entries for <b>{{ user_added.name }}</b></h2>
+        </div>
+    </div>
+    <div class="row">
+        {% if entries %} 
+        {% for entry in entries %}
+        <div class="col-md-4 mb-4">
+            <div class="card" style="height: 100%;">
+                {% if entry.photo %}
+                <img src="{{ entry.photo.url }}" class="card-img-top" alt="Entry Image" style="height: 200px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ entry.title }}</h5>
+                    <p class="card-text">Year: {{ entry.year }}</p>
+                    <p class="card-text">{{ entry.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        no entry added yet
+        {% endif %}
+    </div>
+    <div class="text-center mt-3 my-4">
+        <a href="{% url 'add_entry' user_added.id %}" class="btn btn-primary mr-2">Add Entry</a>
+        <a href="{% url 'generate_tree' user_added.id %}" class="btn btn-secondary">Generate Tree</a>
+    </div>
+</div>
+{% endblock content %}
